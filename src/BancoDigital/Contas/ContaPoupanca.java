@@ -10,7 +10,7 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public void exibirExtrato() {
-        System.out.println("=== Extrato BancoDigital.Contas.Conta Poupança ===");
+        System.out.println("=== Extrato Conta Poupança ===");
         super.imprimirInfosConta();
     }
 

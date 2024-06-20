@@ -11,7 +11,7 @@ public class ContaCorrente extends Conta {
 
     @Override
     public void exibirExtrato() {
-        System.out.println("=== Extrato BancoDigital.Contas.Conta Corrente ===");
+        System.out.println("=== Extrato Conta Corrente ===");
         super.imprimirInfosConta();
     }
 }

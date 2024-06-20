@@ -16,4 +16,8 @@ public class Cliente {
     public String getNome(){
         return nome;
     }
+
+    public String getCpf() {
+        return cpf;
+    }
 }

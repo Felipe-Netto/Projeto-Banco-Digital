@@ -20,7 +20,11 @@ public abstract class Conta implements IConta {
 
     @Override
     public void sacar(double valor) {
-        saldo -= valor;
+        if(valor > saldo){
+            System.out.println("Saldo insuficiente!");
+        }else{
+            saldo -= valor;
+        }
     }
 
     @Override
@@ -30,8 +34,12 @@ public abstract class Conta implements IConta {
 
     @Override
     public void transferir(double valor, Conta contaDestino) {
-        sacar(valor);
-        contaDestino.depositar(valor);
+        if(valor > saldo){
+            System.out.println("Saldo insuficiente!");
+        }else {
+            sacar(valor);
+            contaDestino.depositar(valor);
+        }
     }
 
     public int getAgencia(){
@@ -46,8 +54,13 @@ public abstract class Conta implements IConta {
         return saldo;
     }
 
+    public Cliente getCliente(){
+        return cliente;
+    }
+
     protected void imprimirInfosConta(){
         System.out.println("Titular: " + cliente.getNome());
+        System.out.println("CPF do titular: " + cliente.getCpf());
         System.out.println("Agencia: " + getAgencia());
         System.out.println("Numero da conta: " + getNumero());
         System.out.println("Saldo: " + saldo + "\n");
